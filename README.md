@@ -4,7 +4,7 @@
 Ég byrjaði á því að ná tengingu við veður þjónustuna fyrir ákveðna staðsetningu. Til þess notaði ég Fetch Api og kalla í þjónustuna eftir fyrsta render. Ég vildi til að byrja með einungis kalla í þjónustuna einu sinni þegar síðan hleður og kallaði því í hana í useEffect hook með dependency á api_url.
 
 ## Veður gögn í state
-Veður gögnin eru geymd í state með useState hook.
+Veður gögnin eru geymd í state með useState hook. Ég tók þessa ákvörðun því mest virkni í síðunni er byggð á þessum gögnum.
 
 ## Umbreyta gögnum
 Nú þegar gögnin voru kominn þá fannst mér nauðsynlegt að filtera þau eftir dögum, svo ég bjó til utility function - forecastByDay sem býr til nýjan array af gögnunum grúppuðum eftir dögum, svo það sé auðveldar að rendera lista af dögum sbr. hönnuninni.
