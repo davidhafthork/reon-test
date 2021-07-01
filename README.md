@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Ferlið
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tenging við þjónustu
+Ég byrjaði á því að ná tengingu við veður þjónustuna fyrir ákveðna staðsetningu. Til þess notaði ég Fetch Api og kalla í þjónustuna eftir fyrsta render. Ég vildi til að byrja með einungis kalla í þjónustuna einu sinni þegar síðan hleður og kallaði því í hana í useEffect hook með dependency á api_url.
 
-## Available Scripts
+## Veður gögn í state
+Veður gögnin eru geymd í state með useState hook.
 
-In the project directory, you can run:
+## Umbreyta gögnum
+Nú þegar gögnin voru kominn þá fannst mér nauðsynlegt að filtera þau eftir dögum, svo ég bjó til utility function - forecastByDay sem býr til nýjan array af gögnunum grúppuðum eftir dögum, svo það sé auðveldar að rendera lista af dögum sbr. hönnuninni.
 
-### `npm start`
+## Component strúktúr
+### App 
+Sér um að sækja gögn og breyta þeim svo þau séu meðhöndlanlegri.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### WeatherList
+Tekur við umbreyttum gögnum og sér um að birta lista af WeatherItem og sendir ákveðnar veðurupplýsingar í componentinn.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### WeatherItem
+Eina sem WeatherItem gerir er að birta þær veðurupplýsingar sem koma inn (fyrir einn dag)
 
-### `npm test`
+## Kröfur
+Ég féll svolítið á tíma því miður, mín hugmynd var að ná að birta lista af veðurspá fyrir næstu daga fyrst og fremst því þá er krafa númer eitt nánast kominn (Dagleg veðurspá fyrir einhvern ákveðinn stað næstu 7 daga.), hinar kröfurnar voru í lægri forgangi hjá mér og eftir að krafa eitt er tilbúin þá myndi ég fara að hugsa um útlit og svo rest af kröfunum.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Stílar
+Eftir að ég hefði náð að birta hráa útgáfu af kröfu 1, þá hefði ég farið í að css-a og hefði ég líklega valið mér grid css til þess.
