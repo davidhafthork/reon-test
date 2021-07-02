@@ -27,4 +27,4 @@ Eina sem WeatherItem gerir er að birta þær veðurupplýsingar sem koma inn (f
 Eftir að ég hefði náð að birta hráa útgáfu af kröfu 1, þá hefði ég farið í að css-a og hefði ég líklega valið mér grid css til þess.
 
 # * NOTE *
-Ég hélt aðeins áfram með verkefnið eftir að próftímanum lauk, mikið af betrumbætingum, rétt gögn birt fyrir næstu 7 daga vikunnar og stílað aðeins sbr. hönnuninni.
+Ég hélt aðeins áfram með verkefnið eftir að próftímanum lauk, mikið af betrumbætingum, rétt gögn birt fyrir næstu 7 daga vikunnar og stílað aðeins sbr. hönnuninni. Branchið sem breytingarnar eru í heitir post-test.
