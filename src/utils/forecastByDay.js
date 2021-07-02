@@ -23,7 +23,8 @@ function forecastByDay(forecast) {
 	let forecastByDayArray  = Object.keys(forecastByDay).map(function(key) {  
 		return [Number(key), forecastByDay[key]];  
 	});
-
-	return forecastByDayArray;
+	
+	// We only want the forecast for the next 7 days including today
+	return forecastByDayArray.slice(0,7);
 }
 export default forecastByDay

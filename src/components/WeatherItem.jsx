@@ -1,11 +1,13 @@
-function WeatherItem({airTemperature, windSpeed, logo}) {
+import '../styles/WeatherItem.css';
+
+function WeatherItem({airTemperature, windSpeed, symbol}) {
 	return (<li>
-		<img src="" alt="" />
+		{symbol ? <img src={`${process.env.PUBLIC_URL}/logos/${symbol}.svg`} className="item_logo" alt={symbol} /> : 'mynd ekki til'}
 		<div>
-			{airTemperature}
+			hitastig {airTemperature}
 		</div>
 		<div>
-			{windSpeed}
+			vindhraði {windSpeed}
 		</div>
 	</li>)
 }
