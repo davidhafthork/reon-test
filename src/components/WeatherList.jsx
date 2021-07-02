@@ -1,26 +1,19 @@
 import WeatherItem from './WeatherItem'
+import extractDataFromForecastDay from '../utils/extractDataFromForecastDay';
+import '../styles/WeatherList.css';
 
 function WeatherList({ forecast }) {
 	return (
 		<>
-			<h1>Forecast</h1>
-			<ul>
+			<h1>Veðurspáin</h1>
+			<div className='grid-container'>
 				{forecast.map((data) => {
-					// todo: get data properly and send through props
-					// todo: find a unique key for each list item
-					const airTemperature = data[1][0].data.instant.details.air_temperature;
-					const windSpeed = data[1][0].data.instant.details.wind_speed;
-					let symbol = '';
-
-					if(data[1][0].data.next_6_hours) {
-						symbol = data[1][0].data.next_6_hours.summary.symbol_code;
-					}
-					const key = `${airTemperature}${windSpeed}${symbol}`;
+					const props = extractDataFromForecastDay(data);
 
 					return (
-					<WeatherItem key={key} airTemperature={airTemperature} windSpeed={windSpeed} symbol={symbol} />)
+					<WeatherItem {...props} key={props.id} />)
 				})}
-			</ul>
+			</div>
 		</>
 	);
 }
