@@ -1,14 +1,19 @@
+import capitalize from './capitalize'
 
 function forecastByDay(forecast) {
 	forecast.properties.timeseries = forecast.properties.timeseries.map((data) => {
 		const day = new Date(data.time).getDate()
+		const dayOfWeek = capitalize(new Date(data.time).toLocaleString("is-IS", {
+			weekday: "short",
+		}).substr(0, 3));
 		return {
 			...data,
-			day
+			day,
+			dayOfWeek
 		}
 	});
 
-	const forecastByDay = forecast.properties.timeseries.reduce((acc, value) => {
+	const byDay = forecast.properties.timeseries.reduce((acc, value) => {
 		// Group initialization
 		if (!acc[value.day]) {
 			acc[value.day] = [];
@@ -20,10 +25,11 @@ function forecastByDay(forecast) {
 		return acc;
 	}, {});
 
-	let forecastByDayArray  = Object.keys(forecastByDay).map(function(key) {  
-		return [Number(key), forecastByDay[key]];  
+	let byDayArray  = Object.keys(byDay).map(function(key) {  
+		return [Number(key), byDay[key]];  
 	});
 
-	return forecastByDayArray;
+	// We only want the forecast for the next 7 days including today
+	return byDayArray.slice(0,7);
 }
 export default forecastByDay
