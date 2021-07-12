@@ -1,4 +1,11 @@
-.grid-container {
+.grid-container-days {
 	display: inline-grid;
 	grid-template-columns: repeat( 7, minmax(6em, 1fr) );
+	margin-bottom: 2em;
+}
+
+.grid-container-hours {
+	display: inline-grid;
+	grid-template-columns: repeat( 7, minmax(6em, 1fr) );
+	grid-row-gap: 1em;
 }

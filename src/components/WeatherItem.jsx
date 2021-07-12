@@ -1,6 +1,4 @@
-import {useState} from 'react';
 import '../styles/WeatherItem.css';
-import WeatherItemHourly from './WeatherItemHourly';
 
 function WeatherItem(props) {
 	const {

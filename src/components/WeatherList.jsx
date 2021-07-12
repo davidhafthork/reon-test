@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import WeatherItem from './WeatherItem';
 import WeatherItemHourlyList from './WeatherItemHourlyList';
 import '../styles/WeatherList.css';
@@ -13,18 +13,20 @@ function WeatherList({forecast}) {
 		});
 		setSelected(selectedForecast);
 	};
-	
+
 	return (
 		<>
 			<h1>Veðurspáin</h1>
-			<div className='grid-container'>
+			<div className='grid-container-days'>
 				{forecast.map((forecastDay) => {
 					return (
-							<WeatherItem {...forecastDay} key={forecastDay.id} handleSelected = {handleSelected} />
+							<WeatherItem {...forecastDay} key={forecastDay.id} handleSelected={handleSelected} />
 					)
 				})}
 			</div>
-			<WeatherItemHourlyList oneHourForecast={selected.oneHourForecast} />
+			<div>
+				<WeatherItemHourlyList oneHourForecast={selected.oneHourForecast} />
+			</div>
 		</>
 	);
 }
