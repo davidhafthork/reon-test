@@ -18,3 +18,7 @@
 	text-align: center;
 	color: grey;
 }
+
+.selected {
+	border: 1px grey solid;
+}

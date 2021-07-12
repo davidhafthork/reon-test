@@ -20,7 +20,7 @@ function WeatherList({forecast}) {
 			<div className='grid-container-days'>
 				{forecast.map((forecastDay) => {
 					return (
-							<WeatherItem {...forecastDay} key={forecastDay.id} handleSelected={handleSelected} />
+							<WeatherItem {...forecastDay} key={forecastDay.id} handleSelected={handleSelected} selected={selected} />
 					)
 				})}
 			</div>

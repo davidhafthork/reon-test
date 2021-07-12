@@ -7,7 +7,8 @@ function WeatherItem(props) {
 		airTemperatureLow,
 		dayOfWeek,
 		symbol,
-		handleSelected} = props;
+		handleSelected,
+		selected} = props;
 
 	const DayOfWeek = () => {
 		return (
@@ -32,7 +33,7 @@ function WeatherItem(props) {
 	}
 
 	return (
-		<div className='grid_item' onClick = {() => handleSelected(id)}>
+		<div className={selected.id === id ? 'grid_item selected' : 'grid_item'} onClick = {() => handleSelected(id)}>
 			<DayOfWeek />
 			<Logo />
 			<Temps />
