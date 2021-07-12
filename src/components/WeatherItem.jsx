@@ -1,11 +1,15 @@
+import {useState} from 'react';
 import '../styles/WeatherItem.css';
+import WeatherItemHourly from './WeatherItemHourly';
 
 function WeatherItem(props) {
 	const {
+		id,
 		airTemperatureHigh,
 		airTemperatureLow,
 		dayOfWeek,
-		symbol } = props;
+		symbol,
+		handleSelected} = props;
 
 	const DayOfWeek = () => {
 		return (
@@ -30,7 +34,7 @@ function WeatherItem(props) {
 	}
 
 	return (
-		<div className='grid_item'>
+		<div className='grid_item' onClick = {() => handleSelected(id)}>
 			<DayOfWeek />
 			<Logo />
 			<Temps />

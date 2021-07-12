@@ -1,4 +1,5 @@
-import capitalize from './capitalize'
+import capitalize from './capitalize';
+import extractDataFromForecastDay from './extractDataFromForecastDay';
 
 function forecastByDay(forecast) {
 	forecast.properties.timeseries = forecast.properties.timeseries.map((data) => {
@@ -30,6 +31,11 @@ function forecastByDay(forecast) {
 	});
 
 	// We only want the forecast for the next 7 days including today
-	return byDayArray.slice(0,7);
+	byDayArray = byDayArray.slice(0,7);
+
+	// Only return relevant data from each day.
+	return byDayArray.map(data => 
+		extractDataFromForecastDay(data)
+	);
 }
 export default forecastByDay
