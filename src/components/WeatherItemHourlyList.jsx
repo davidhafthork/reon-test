@@ -4,7 +4,7 @@ function WeatherItemHourlyList({oneHourForecast}) {
 	return (
 		<div className="grid-container-hours">
 			{oneHourForecast.map(hourForecast => 
-				<WeatherItemHourly {...hourForecast} />)}
+				<WeatherItemHourly {...hourForecast} key={hourForecast.id} />)}
 		</div>);
 }
 

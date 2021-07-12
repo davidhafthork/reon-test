@@ -1,7 +1,7 @@
 function WeatherItemHourly({hour, airTemperatureHigh, airTemperatureLow, symbol}) {
 	const Hour = () => {
 		return (
-			<div className='day_of_week'>
+			<div className='hour_of_day'>
 				{hour}
 			</div>
 		)};

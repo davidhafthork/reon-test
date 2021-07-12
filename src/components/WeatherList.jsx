@@ -3,12 +3,11 @@ import WeatherItem from './WeatherItem';
 import WeatherItemHourlyList from './WeatherItemHourlyList';
 import '../styles/WeatherList.css';
 
-
 function WeatherList({forecast}) {
 	const [selected, setSelected] = useState(forecast[0]);
 
 	const handleSelected = id => {
-		const selectedForecast = forecast.find((day) => {
+		const selectedForecast = forecast.find(day => {
 			return day.id === id;
 		});
 		setSelected(selectedForecast);

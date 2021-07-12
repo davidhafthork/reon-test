@@ -14,7 +14,7 @@
 	color:grey;
 }
 
-.day_of_week {
+.day_of_week, .hour_of_day {
 	text-align: center;
 	color: grey;
 }
